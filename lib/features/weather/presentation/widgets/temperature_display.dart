@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class TemperatureDisplay extends StatelessWidget {
   final String temperature;
   final String feelsLike;
+  final String unit;
 
   const TemperatureDisplay({
     super.key,
     required this.temperature,
     required this.feelsLike,
+    this.unit = '°C',
   });
 
   @override
@@ -27,9 +29,9 @@ class TemperatureDisplay extends StatelessWidget {
                 height: 1,
               ),
             ),
-            const Text(
-              '°C',
-              style: TextStyle(
+            Text(
+              unit,
+              style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w300,
                 color: Colors.white70,
@@ -39,7 +41,7 @@ class TemperatureDisplay extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          'Feels like $feelsLike°C',
+          'Feels like $feelsLike$unit',
           style: TextStyle(
             fontSize: 16,
             color: Colors.white.withValues(alpha: 0.7),

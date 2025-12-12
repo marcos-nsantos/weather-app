@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../settings/presentation/providers/settings_providers.dart';
 import '../../domain/entities/weather.dart';
 import 'temperature_display.dart';
 import 'weather_info_tile.dart';
 
-class CurrentWeatherCard extends StatelessWidget {
+class CurrentWeatherCard extends ConsumerWidget {
   final Weather weather;
 
   const CurrentWeatherCard({
@@ -13,7 +15,9 @@ class CurrentWeatherCard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(userSettingsNotifierProvider);
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.all(24),
@@ -27,8 +31,9 @@ class CurrentWeatherCard extends StatelessWidget {
       child: Column(
         children: [
           TemperatureDisplay(
-            temperature: weather.temperatureString,
-            feelsLike: weather.feelsLikeString,
+            temperature: settings.formatTemperature(weather.temperature),
+            feelsLike: settings.formatTemperature(weather.feelsLike),
+            unit: settings.temperatureUnit.symbol,
           ),
           const SizedBox(height: 8),
           Text(
@@ -51,7 +56,7 @@ class CurrentWeatherCard extends StatelessWidget {
               WeatherInfoTile(
                 icon: Icons.air,
                 label: 'Wind',
-                value: weather.windSpeedString,
+                value: settings.formatWindSpeed(weather.windSpeed),
               ),
               WeatherInfoTile(
                 icon: Icons.visibility,
