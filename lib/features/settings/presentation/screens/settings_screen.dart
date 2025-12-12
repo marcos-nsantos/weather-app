@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../shared/widgets/gradient_background.dart';
+import '../../domain/entities/user_settings.dart';
+import '../providers/settings_providers.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(userSettingsNotifierProvider);
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -26,18 +30,14 @@ class SettingsScreen extends ConsumerWidget {
                   _SettingsTile(
                     icon: Icons.thermostat,
                     title: 'Temperature',
-                    subtitle: 'Celsius (°C)',
-                    onTap: () {
-                      // TODO: Implement temperature unit toggle
-                    },
+                    subtitle: _getTemperatureSubtitle(settings.temperatureUnit),
+                    onTap: () => _showTemperatureDialog(context, ref, settings),
                   ),
                   _SettingsTile(
                     icon: Icons.speed,
                     title: 'Wind Speed',
-                    subtitle: 'Meters per second (m/s)',
-                    onTap: () {
-                      // TODO: Implement wind speed unit toggle
-                    },
+                    subtitle: _getWindSpeedSubtitle(settings.windSpeedUnit),
+                    onTap: () => _showWindSpeedDialog(context, ref, settings),
                   ),
                 ],
               ),
@@ -62,6 +62,109 @@ class SettingsScreen extends ConsumerWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  String _getTemperatureSubtitle(TemperatureUnit unit) {
+    return switch (unit) {
+      TemperatureUnit.celsius => 'Celsius (°C)',
+      TemperatureUnit.fahrenheit => 'Fahrenheit (°F)',
+    };
+  }
+
+  String _getWindSpeedSubtitle(WindSpeedUnit unit) {
+    return switch (unit) {
+      WindSpeedUnit.metersPerSecond => 'Meters per second (m/s)',
+      WindSpeedUnit.kilometersPerHour => 'Kilometers per hour (km/h)',
+      WindSpeedUnit.milesPerHour => 'Miles per hour (mph)',
+    };
+  }
+
+  void _showTemperatureDialog(
+    BuildContext context,
+    WidgetRef ref,
+    UserSettings settings,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) => SimpleDialog(
+        backgroundColor: const Color(0xFF1E1E2E),
+        title: const Text(
+          'Temperature Unit',
+          style: TextStyle(color: Colors.white),
+        ),
+        children: TemperatureUnit.values.map((unit) {
+          final isSelected = unit == settings.temperatureUnit;
+          return SimpleDialogOption(
+            onPressed: () {
+              ref
+                  .read(userSettingsNotifierProvider.notifier)
+                  .setTemperatureUnit(unit);
+              Navigator.pop(context);
+            },
+            child: Row(
+              children: [
+                Icon(
+                  isSelected ? Icons.check_circle : Icons.circle_outlined,
+                  color: isSelected ? Colors.blue : Colors.white54,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  _getTemperatureSubtitle(unit),
+                  style: TextStyle(
+                    color: isSelected ? Colors.white : Colors.white70,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  void _showWindSpeedDialog(
+    BuildContext context,
+    WidgetRef ref,
+    UserSettings settings,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) => SimpleDialog(
+        backgroundColor: const Color(0xFF1E1E2E),
+        title: const Text(
+          'Wind Speed Unit',
+          style: TextStyle(color: Colors.white),
+        ),
+        children: WindSpeedUnit.values.map((unit) {
+          final isSelected = unit == settings.windSpeedUnit;
+          return SimpleDialogOption(
+            onPressed: () {
+              ref
+                  .read(userSettingsNotifierProvider.notifier)
+                  .setWindSpeedUnit(unit);
+              Navigator.pop(context);
+            },
+            child: Row(
+              children: [
+                Icon(
+                  isSelected ? Icons.check_circle : Icons.circle_outlined,
+                  color: isSelected ? Colors.blue : Colors.white54,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  _getWindSpeedSubtitle(unit),
+                  style: TextStyle(
+                    color: isSelected ? Colors.white : Colors.white70,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }).toList(),
       ),
     );
   }
