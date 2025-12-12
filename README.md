@@ -11,6 +11,7 @@ A beautiful Flutter weather application with dynamic animations and themes.
 - **City Search**: Search weather for any city worldwide
 - **Geolocation**: Automatic location detection
 - **Offline Cache**: View last weather data when offline
+- **Unit Settings**: Toggle between Celsius/Fahrenheit and wind speed units (m/s, km/h, mph)
 
 ## Screenshots
 
