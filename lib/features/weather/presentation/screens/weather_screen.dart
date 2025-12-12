@@ -71,7 +71,7 @@ class WeatherScreen extends ConsumerWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: const Color(0xFF1E1E2E),
         title: const Text(
           'Search City',
           style: TextStyle(color: Colors.white),
@@ -80,16 +80,19 @@ class WeatherScreen extends ConsumerWidget {
           controller: controller,
           autofocus: true,
           style: const TextStyle(color: Colors.white),
+          cursorColor: Colors.blue,
           decoration: InputDecoration(
             hintText: 'Enter city name',
             hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+            filled: true,
+            fillColor: Colors.white.withValues(alpha: 0.1),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.3)),
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(12),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
           onSubmitted: (value) {
@@ -102,7 +105,10 @@ class WeatherScreen extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Cancel'),
+            child: Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white.withValues(alpha: 0.7)),
+            ),
           ),
           TextButton(
             onPressed: () {
@@ -112,7 +118,13 @@ class WeatherScreen extends ConsumerWidget {
                 Navigator.of(context).pop();
               }
             },
-            child: const Text('Search'),
+            child: const Text(
+              'Search',
+              style: TextStyle(
+                color: Colors.blue,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ],
       ),
