@@ -1,6 +1,10 @@
 # Weather App
 
-A beautiful Flutter weather application with dynamic animations and themes.
+![Tests](https://img.shields.io/badge/tests-165%20passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-48.8%25-yellow)
+![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue)
+
+A Flutter weather application with dynamic animations and themes.
 
 ## Features
 
@@ -30,14 +34,18 @@ The app features beautiful gradient backgrounds that change based on:
 ### 2. Run the App
 
 ```bash
-# Install dependencies
-flutter pub get
-
-# Generate code (Freezed, Riverpod)
-dart run build_runner build --delete-conflicting-outputs
+# Initial setup
+make setup
 
 # Run with API key
-flutter run --dart-define=OPENWEATHER_API_KEY=your_api_key_here
+OPENWEATHER_API_KEY=your_key make run
+```
+
+Or without Make:
+```bash
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+flutter run --dart-define=OPENWEATHER_API_KEY=your_key
 ```
 
 ### 3. Build for Release
@@ -84,6 +92,17 @@ The app includes animated weather icons for:
 - 🌫️ Foggy
 - 🌙 Night Clear
 - 🌙☁️ Night Cloudy
+
+## Development
+
+```bash
+make help      # Show all commands
+make setup     # Install deps + generate code
+make test      # Run tests
+make coverage  # Tests + coverage report
+make format    # Format code
+make analyze   # Static analysis
+```
 
 ## Permissions
 

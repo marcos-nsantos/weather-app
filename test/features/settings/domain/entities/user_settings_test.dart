@@ -23,6 +23,26 @@ void main() {
         // 25°C = 77°F
         expect(settings.formatTemperature(25.0), '77');
       });
+
+      test('should handle negative temperatures in celsius', () {
+        const settings = UserSettings(temperatureUnit: TemperatureUnit.celsius);
+
+        expect(settings.formatTemperature(-10.0), '-10');
+        expect(settings.formatTemperature(-25.5), '-26');
+        expect(settings.formatTemperature(-0.5), '-1');
+      });
+
+      test('should convert negative celsius to fahrenheit correctly', () {
+        const settings =
+            UserSettings(temperatureUnit: TemperatureUnit.fahrenheit);
+
+        // -10°C = 14°F
+        expect(settings.formatTemperature(-10.0), '14');
+        // -40°C = -40°F (the point where both scales meet)
+        expect(settings.formatTemperature(-40.0), '-40');
+        // -17.78°C ≈ 0°F
+        expect(settings.formatTemperature(-17.78), '0');
+      });
     });
 
     group('formatWindSpeed', () {

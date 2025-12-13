@@ -58,5 +58,40 @@ void main() {
       expect(find.text('°C'), findsOneWidget);
       expect(find.text('Feels like 18°C'), findsOneWidget);
     });
+
+    testWidgets('should display negative temperature correctly',
+        (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: TemperatureDisplay(
+              temperature: '-15',
+              feelsLike: '-20',
+              unit: '°C',
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text('-15'), findsOneWidget);
+      expect(find.text('Feels like -20°C'), findsOneWidget);
+    });
+
+    testWidgets('should display zero temperature', (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: TemperatureDisplay(
+              temperature: '0',
+              feelsLike: '-2',
+              unit: '°C',
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text('0'), findsOneWidget);
+      expect(find.text('Feels like -2°C'), findsOneWidget);
+    });
   });
 }

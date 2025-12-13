@@ -33,6 +33,12 @@ void main() {
         expect(WeatherCondition.fromCode(531), WeatherCondition.heavyRain);
       });
 
+      test('should return heavyRain for freezing rain (511)', () {
+        // Code 511 is freezing rain in OpenWeatherMap API
+        // It falls in the 500-599 range and >= 502, so it should be heavyRain
+        expect(WeatherCondition.fromCode(511), WeatherCondition.heavyRain);
+      });
+
       test('should return thunderstorm for thunderstorm codes (200-232)', () {
         expect(WeatherCondition.fromCode(200), WeatherCondition.thunderstorm);
         expect(WeatherCondition.fromCode(211), WeatherCondition.thunderstorm);
