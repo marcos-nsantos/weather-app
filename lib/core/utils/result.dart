@@ -28,6 +28,11 @@ extension ResultX<T> on Result<T> {
         ResultFailure(:final failure) => failure,
       };
 
+  T getOrElse(T defaultValue) => switch (this) {
+        Success(:final data) => data,
+        ResultFailure() => defaultValue,
+      };
+
   R when<R>({
     required R Function(T data) success,
     required R Function(Failure failure) failure,
