@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,235 +9,278 @@ part of 'user_location.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
-UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
-  return _UserLocation.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UserLocation {
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
-  String? get cityName => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
+
+ double get latitude; double get longitude; String? get cityName; String? get country;
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserLocationCopyWith<UserLocation> get copyWith => _$UserLocationCopyWithImpl<UserLocation>(this as UserLocation, _$identity);
 
   /// Serializes this UserLocation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of UserLocation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserLocationCopyWith<UserLocation> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.cityName, cityName) || other.cityName == cityName)&&(identical(other.country, country) || other.country == country));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude,cityName,country);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude, cityName: $cityName, country: $country)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $UserLocationCopyWith<$Res> {
-  factory $UserLocationCopyWith(
-    UserLocation value,
-    $Res Function(UserLocation) then,
-  ) = _$UserLocationCopyWithImpl<$Res, UserLocation>;
-  @useResult
-  $Res call({
-    double latitude,
-    double longitude,
-    String? cityName,
-    String? country,
-  });
-}
+abstract mixin class $UserLocationCopyWith<$Res>  {
+  factory $UserLocationCopyWith(UserLocation value, $Res Function(UserLocation) _then) = _$UserLocationCopyWithImpl;
+@useResult
+$Res call({
+ double latitude, double longitude, String? cityName, String? country
+});
 
+
+
+
+}
 /// @nodoc
-class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
+class _$UserLocationCopyWithImpl<$Res>
     implements $UserLocationCopyWith<$Res> {
-  _$UserLocationCopyWithImpl(this._value, this._then);
+  _$UserLocationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UserLocation _self;
+  final $Res Function(UserLocation) _then;
 
-  /// Create a copy of UserLocation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? cityName = freezed,
-    Object? country = freezed,
-  }) {
-    return _then(
-      _value.copyWith(
-            latitude: null == latitude
-                ? _value.latitude
-                : latitude // ignore: cast_nullable_to_non_nullable
-                      as double,
-            longitude: null == longitude
-                ? _value.longitude
-                : longitude // ignore: cast_nullable_to_non_nullable
-                      as double,
-            cityName: freezed == cityName
-                ? _value.cityName
-                : cityName // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            country: freezed == country
-                ? _value.country
-                : country // ignore: cast_nullable_to_non_nullable
-                      as String?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? latitude = null,Object? longitude = null,Object? cityName = freezed,Object? country = freezed,}) {
+  return _then(_self.copyWith(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,cityName: freezed == cityName ? _self.cityName : cityName // ignore: cast_nullable_to_non_nullable
+as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$UserLocationImplCopyWith<$Res>
-    implements $UserLocationCopyWith<$Res> {
-  factory _$$UserLocationImplCopyWith(
-    _$UserLocationImpl value,
-    $Res Function(_$UserLocationImpl) then,
-  ) = __$$UserLocationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    double latitude,
-    double longitude,
-    String? cityName,
-    String? country,
-  });
 }
 
-/// @nodoc
-class __$$UserLocationImplCopyWithImpl<$Res>
-    extends _$UserLocationCopyWithImpl<$Res, _$UserLocationImpl>
-    implements _$$UserLocationImplCopyWith<$Res> {
-  __$$UserLocationImplCopyWithImpl(
-    _$UserLocationImpl _value,
-    $Res Function(_$UserLocationImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of UserLocation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? cityName = freezed,
-    Object? country = freezed,
-  }) {
-    return _then(
-      _$UserLocationImpl(
-        latitude: null == latitude
-            ? _value.latitude
-            : latitude // ignore: cast_nullable_to_non_nullable
-                  as double,
-        longitude: null == longitude
-            ? _value.longitude
-            : longitude // ignore: cast_nullable_to_non_nullable
-                  as double,
-        cityName: freezed == cityName
-            ? _value.cityName
-            : cityName // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        country: freezed == country
-            ? _value.country
-            : country // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [UserLocation].
+extension UserLocationPatterns on UserLocation {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UserLocation value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UserLocation() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UserLocation value)  $default,){
+final _that = this;
+switch (_that) {
+case _UserLocation():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UserLocation value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UserLocation() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double latitude,  double longitude,  String? cityName,  String? country)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UserLocation() when $default != null:
+return $default(_that.latitude,_that.longitude,_that.cityName,_that.country);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double latitude,  double longitude,  String? cityName,  String? country)  $default,) {final _that = this;
+switch (_that) {
+case _UserLocation():
+return $default(_that.latitude,_that.longitude,_that.cityName,_that.country);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double latitude,  double longitude,  String? cityName,  String? country)?  $default,) {final _that = this;
+switch (_that) {
+case _UserLocation() when $default != null:
+return $default(_that.latitude,_that.longitude,_that.cityName,_that.country);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserLocationImpl implements _UserLocation {
-  const _$UserLocationImpl({
-    required this.latitude,
-    required this.longitude,
-    this.cityName,
-    this.country,
-  });
 
-  factory _$UserLocationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserLocationImplFromJson(json);
+class _UserLocation implements UserLocation {
+  const _UserLocation({required this.latitude, required this.longitude, this.cityName, this.country});
+  factory _UserLocation.fromJson(Map<String, dynamic> json) => _$UserLocationFromJson(json);
 
-  @override
-  final double latitude;
-  @override
-  final double longitude;
-  @override
-  final String? cityName;
-  @override
-  final String? country;
+@override final  double latitude;
+@override final  double longitude;
+@override final  String? cityName;
+@override final  String? country;
 
-  @override
-  String toString() {
-    return 'UserLocation(latitude: $latitude, longitude: $longitude, cityName: $cityName, country: $country)';
-  }
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UserLocationCopyWith<_UserLocation> get copyWith => __$UserLocationCopyWithImpl<_UserLocation>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserLocationImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.cityName, cityName) ||
-                other.cityName == cityName) &&
-            (identical(other.country, country) || other.country == country));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, latitude, longitude, cityName, country);
-
-  /// Create a copy of UserLocation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserLocationImplCopyWith<_$UserLocationImpl> get copyWith =>
-      __$$UserLocationImplCopyWithImpl<_$UserLocationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserLocationImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$UserLocationToJson(this, );
 }
 
-abstract class _UserLocation implements UserLocation {
-  const factory _UserLocation({
-    required final double latitude,
-    required final double longitude,
-    final String? cityName,
-    final String? country,
-  }) = _$UserLocationImpl;
-
-  factory _UserLocation.fromJson(Map<String, dynamic> json) =
-      _$UserLocationImpl.fromJson;
-
-  @override
-  double get latitude;
-  @override
-  double get longitude;
-  @override
-  String? get cityName;
-  @override
-  String? get country;
-
-  /// Create a copy of UserLocation
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserLocationImplCopyWith<_$UserLocationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserLocation&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.cityName, cityName) || other.cityName == cityName)&&(identical(other.country, country) || other.country == country));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude,cityName,country);
+
+@override
+String toString() {
+  return 'UserLocation(latitude: $latitude, longitude: $longitude, cityName: $cityName, country: $country)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UserLocationCopyWith<$Res> implements $UserLocationCopyWith<$Res> {
+  factory _$UserLocationCopyWith(_UserLocation value, $Res Function(_UserLocation) _then) = __$UserLocationCopyWithImpl;
+@override @useResult
+$Res call({
+ double latitude, double longitude, String? cityName, String? country
+});
+
+
+
+
+}
+/// @nodoc
+class __$UserLocationCopyWithImpl<$Res>
+    implements _$UserLocationCopyWith<$Res> {
+  __$UserLocationCopyWithImpl(this._self, this._then);
+
+  final _UserLocation _self;
+  final $Res Function(_UserLocation) _then;
+
+/// Create a copy of UserLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,Object? cityName = freezed,Object? country = freezed,}) {
+  return _then(_UserLocation(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,cityName: freezed == cityName ? _self.cityName : cityName // ignore: cast_nullable_to_non_nullable
+as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -7,7 +7,7 @@ part 'weather_response_model.freezed.dart';
 part 'weather_response_model.g.dart';
 
 @freezed
-class WeatherResponseModel with _$WeatherResponseModel {
+abstract class WeatherResponseModel with _$WeatherResponseModel {
   const WeatherResponseModel._();
 
   const factory WeatherResponseModel({
@@ -48,7 +48,7 @@ class WeatherResponseModel with _$WeatherResponseModel {
 }
 
 @freezed
-class MainData with _$MainData {
+abstract class MainData with _$MainData {
   const factory MainData({
     required double temp,
     required double feelsLike,
@@ -63,7 +63,7 @@ class MainData with _$MainData {
 }
 
 @freezed
-class WeatherData with _$WeatherData {
+abstract class WeatherData with _$WeatherData {
   const factory WeatherData({
     required int id,
     required String main,
@@ -76,7 +76,7 @@ class WeatherData with _$WeatherData {
 }
 
 @freezed
-class WindData with _$WindData {
+abstract class WindData with _$WindData {
   const factory WindData({
     required double speed,
     @Default(0) int deg,
@@ -87,7 +87,7 @@ class WindData with _$WindData {
 }
 
 @freezed
-class CloudsData with _$CloudsData {
+abstract class CloudsData with _$CloudsData {
   const factory CloudsData({
     required int all,
   }) = _CloudsData;
@@ -97,7 +97,7 @@ class CloudsData with _$CloudsData {
 }
 
 @freezed
-class SysData with _$SysData {
+abstract class SysData with _$SysData {
   const factory SysData({
     required String country,
     required int sunrise,

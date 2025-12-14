@@ -6,9 +6,9 @@ part of 'user_settings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserSettingsImpl _$$UserSettingsImplFromJson(
+_UserSettings _$UserSettingsFromJson(
   Map<String, dynamic> json,
-) => _$UserSettingsImpl(
+) => _UserSettings(
   temperatureUnit:
       $enumDecodeNullable(_$TemperatureUnitEnumMap, json['temperature_unit']) ??
       TemperatureUnit.celsius,
@@ -17,7 +17,7 @@ _$UserSettingsImpl _$$UserSettingsImplFromJson(
       WindSpeedUnit.metersPerSecond,
 );
 
-Map<String, dynamic> _$$UserSettingsImplToJson(_$UserSettingsImpl instance) =>
+Map<String, dynamic> _$UserSettingsToJson(_UserSettings instance) =>
     <String, dynamic>{
       'temperature_unit': _$TemperatureUnitEnumMap[instance.temperatureUnit]!,
       'wind_speed_unit': _$WindSpeedUnitEnumMap[instance.windSpeedUnit]!,

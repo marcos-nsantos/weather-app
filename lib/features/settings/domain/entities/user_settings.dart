@@ -21,7 +21,7 @@ enum WindSpeedUnit {
 }
 
 @freezed
-class UserSettings with _$UserSettings {
+abstract class UserSettings with _$UserSettings {
   const UserSettings._();
 
   const factory UserSettings({

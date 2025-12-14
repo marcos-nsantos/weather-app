@@ -10,7 +10,7 @@ class SettingsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final settings = ref.watch(userSettingsNotifierProvider);
+    final settings = ref.watch(userSettingsProvider);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -99,7 +99,7 @@ class SettingsScreen extends ConsumerWidget {
           return SimpleDialogOption(
             onPressed: () {
               ref
-                  .read(userSettingsNotifierProvider.notifier)
+                  .read(userSettingsProvider.notifier)
                   .setTemperatureUnit(unit);
               Navigator.pop(context);
             },
@@ -143,7 +143,7 @@ class SettingsScreen extends ConsumerWidget {
           return SimpleDialogOption(
             onPressed: () {
               ref
-                  .read(userSettingsNotifierProvider.notifier)
+                  .read(userSettingsProvider.notifier)
                   .setWindSpeedUnit(unit);
               Navigator.pop(context);
             },

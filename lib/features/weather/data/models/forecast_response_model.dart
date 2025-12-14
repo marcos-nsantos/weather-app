@@ -7,7 +7,7 @@ part 'forecast_response_model.freezed.dart';
 part 'forecast_response_model.g.dart';
 
 @freezed
-class ForecastResponseModel with _$ForecastResponseModel {
+abstract class ForecastResponseModel with _$ForecastResponseModel {
   const ForecastResponseModel._();
 
   const factory ForecastResponseModel({
@@ -41,7 +41,7 @@ class ForecastResponseModel with _$ForecastResponseModel {
 }
 
 @freezed
-class ForecastListItem with _$ForecastListItem {
+abstract class ForecastListItem with _$ForecastListItem {
   const factory ForecastListItem({
     required int dt,
     required ForecastMainData main,
@@ -54,7 +54,7 @@ class ForecastListItem with _$ForecastListItem {
 }
 
 @freezed
-class ForecastMainData with _$ForecastMainData {
+abstract class ForecastMainData with _$ForecastMainData {
   const factory ForecastMainData({
     required double temp,
     required double tempMin,
@@ -67,7 +67,7 @@ class ForecastMainData with _$ForecastMainData {
 }
 
 @freezed
-class ForecastWeatherData with _$ForecastWeatherData {
+abstract class ForecastWeatherData with _$ForecastWeatherData {
   const factory ForecastWeatherData({
     required int id,
     required String main,
@@ -79,7 +79,7 @@ class ForecastWeatherData with _$ForecastWeatherData {
 }
 
 @freezed
-class ForecastWindData with _$ForecastWindData {
+abstract class ForecastWindData with _$ForecastWindData {
   const factory ForecastWindData({
     required double speed,
   }) = _ForecastWindData;
@@ -89,7 +89,7 @@ class ForecastWindData with _$ForecastWindData {
 }
 
 @freezed
-class CityData with _$CityData {
+abstract class CityData with _$CityData {
   const factory CityData({
     required String name,
     required String country,

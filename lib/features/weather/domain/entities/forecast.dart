@@ -6,7 +6,7 @@ part 'forecast.freezed.dart';
 part 'forecast.g.dart';
 
 @freezed
-class Forecast with _$Forecast {
+abstract class Forecast with _$Forecast {
   const factory Forecast({
     required List<ForecastItem> items,
     required String cityName,
@@ -17,7 +17,7 @@ class Forecast with _$Forecast {
 }
 
 @freezed
-class ForecastItem with _$ForecastItem {
+abstract class ForecastItem with _$ForecastItem {
   const ForecastItem._();
 
   const factory ForecastItem({

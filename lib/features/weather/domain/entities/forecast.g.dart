@@ -6,19 +6,20 @@ part of 'forecast.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ForecastImpl _$$ForecastImplFromJson(Map<String, dynamic> json) =>
-    _$ForecastImpl(
-      items: (json['items'] as List<dynamic>)
-          .map((e) => ForecastItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      cityName: json['city_name'] as String,
-    );
+_Forecast _$ForecastFromJson(Map<String, dynamic> json) => _Forecast(
+  items: (json['items'] as List<dynamic>)
+      .map((e) => ForecastItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  cityName: json['city_name'] as String,
+);
 
-Map<String, dynamic> _$$ForecastImplToJson(_$ForecastImpl instance) =>
-    <String, dynamic>{'items': instance.items, 'city_name': instance.cityName};
+Map<String, dynamic> _$ForecastToJson(_Forecast instance) => <String, dynamic>{
+  'items': instance.items,
+  'city_name': instance.cityName,
+};
 
-_$ForecastItemImpl _$$ForecastItemImplFromJson(Map<String, dynamic> json) =>
-    _$ForecastItemImpl(
+_ForecastItem _$ForecastItemFromJson(Map<String, dynamic> json) =>
+    _ForecastItem(
       dateTime: DateTime.parse(json['date_time'] as String),
       temperature: (json['temperature'] as num).toDouble(),
       tempMin: (json['temp_min'] as num).toDouble(),
@@ -29,7 +30,7 @@ _$ForecastItemImpl _$$ForecastItemImplFromJson(Map<String, dynamic> json) =>
       windSpeed: (json['wind_speed'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$ForecastItemImplToJson(_$ForecastItemImpl instance) =>
+Map<String, dynamic> _$ForecastItemToJson(_ForecastItem instance) =>
     <String, dynamic>{
       'date_time': instance.dateTime.toIso8601String(),
       'temperature': instance.temperature,

@@ -6,15 +6,15 @@ part of 'user_location.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserLocationImpl _$$UserLocationImplFromJson(Map<String, dynamic> json) =>
-    _$UserLocationImpl(
+_UserLocation _$UserLocationFromJson(Map<String, dynamic> json) =>
+    _UserLocation(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       cityName: json['city_name'] as String?,
       country: json['country'] as String?,
     );
 
-Map<String, dynamic> _$$UserLocationImplToJson(_$UserLocationImpl instance) =>
+Map<String, dynamic> _$UserLocationToJson(_UserLocation instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,

@@ -6,22 +6,59 @@ part of 'settings_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(UserSettingsNotifier)
+const userSettingsProvider = UserSettingsNotifierProvider._();
+
+final class UserSettingsNotifierProvider
+    extends $NotifierProvider<UserSettingsNotifier, UserSettings> {
+  const UserSettingsNotifierProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'userSettingsProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$userSettingsNotifierHash();
+
+  @$internal
+  @override
+  UserSettingsNotifier create() => UserSettingsNotifier();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(UserSettings value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<UserSettings>(value),
+    );
+  }
+}
+
 String _$userSettingsNotifierHash() =>
     r'd9ecf01ada0de1fa38d815ef2599c197662a86fe';
 
-/// See also [UserSettingsNotifier].
-@ProviderFor(UserSettingsNotifier)
-final userSettingsNotifierProvider =
-    NotifierProvider<UserSettingsNotifier, UserSettings>.internal(
-      UserSettingsNotifier.new,
-      name: r'userSettingsNotifierProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$userSettingsNotifierHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$UserSettingsNotifier = Notifier<UserSettings>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+abstract class _$UserSettingsNotifier extends $Notifier<UserSettings> {
+  UserSettings build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<UserSettings, UserSettings>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<UserSettings, UserSettings>,
+              UserSettings,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

@@ -6,7 +6,7 @@ part 'weather.freezed.dart';
 part 'weather.g.dart';
 
 @freezed
-class Weather with _$Weather {
+abstract class Weather with _$Weather {
   const Weather._();
 
   const factory Weather({

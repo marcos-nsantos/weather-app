@@ -16,7 +16,7 @@ class CurrentWeatherCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final settings = ref.watch(userSettingsNotifierProvider);
+    final settings = ref.watch(userSettingsProvider);
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
